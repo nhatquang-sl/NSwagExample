@@ -51,6 +51,12 @@ namespace NSwagExample
                 app.UseSpaStaticFiles();
             }
 
+            app.UseSwaggerUi3(settings =>
+            {
+                settings.Path = "/api";
+                settings.DocumentPath = "/api/specification.json";
+            });
+            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
